@@ -20,28 +20,27 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-__all__ = []
-
 import datetime
 import getpass
 
 from colorama import deinit, init
 
-if __name__ == '__main__':
-    msg = 'stop [\033[31mENTER\033[0m] '
+MSG_NTR = ('stop ['
+           '\033[31mENTER'
+           '\033[0m] ')
 
-    start = datetime.datetime.now()
+prompt = ''
 
-    init()
+init()
 
-    print(msg)
+print(MSG_NTR)
 
-    deinit()
+a = datetime.datetime.now()
 
-    getpass.getpass('')
+getpass.getpass(prompt)
 
-    stop = datetime.datetime.now()
+b = datetime.datetime.now()
 
-    time_elapsed = stop - start
+deinit()
 
-    print(time_elapsed)
+print(b - a)

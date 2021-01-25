@@ -20,89 +20,76 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""The user has three attempts to guess what number was chosen at random"""
+"""
+The user has three attempts to guess what number was chosen at random
 
-__all__ = []
+Non-digits are not accepted
+Digits accepted are removed from the pool
+"""
 
 import random
 import string
 
 from colorama import deinit, init
 
-right_answer = random.choice(string.digits)
+chint = '*'
 
-as_int = int(right_answer)
+r_ans = random.choice(string.digits)
 
-MSG_ANS = 'The answer was ' + right_answer
+MSG_ANS = f'The answer was {r_ans}'
 MSG_ASK = 'Guess the number (0-9) '
-MSG_OK = '\033[32mCorrect!\033[0m'
-MSG_TRY = '\033[31mTry again *\033[0m'
+MSG_COR = ('\033[32m'
+           'Correct!'
+           '\033[0m')
+MSG_INC = (f'\033[31m'
+           f'Try again {chint}'
+           '\033[0m')
 
 
-def ask(addline, msg_wrong):
-    """
-    One attempt
+def main():
+    asint = int(r_ans)
 
-    Non-digits are not accepted
-
-    Digits accepted are removed from the pool
-    and are not accepted in subsequent attempts
-    """
-    global pool
-
-    cursor_up = '\033[A'
-
-    cursor_up_ask = cursor_up + '                       '
-
-    while True:
-        answer = input(MSG_ASK)
-
-        if answer and answer in pool:
-            break
-
-        answer_sz = len(answer)
-        answer_sz = answer_sz * ' '
-
-        line = cursor_up_ask + answer_sz + cursor_up
-
-        print(line)
-
-        print()
-
-        if addline:
-            print()
-
-        print(line, end='\r')
-
-    if answer == right_answer:
-        print(MSG_OK)
-
-        exit()
-
-    if msg_wrong == MSG_TRY:
-        i = int(answer)
-
-        if i > as_int:
-            hint = '>'
-        else:
-            hint = '<'
-
-        msg_wrong = msg_wrong.replace('*', hint)
-
-    print(msg_wrong)
-
-    pool = pool.replace(answer, '')
-
-
-if __name__ == '__main__':
-    pool = string.digits
+    pop = string.digits
 
     init()
 
-    ask(True, MSG_TRY)
+    for s in MSG_INC, MSG_INC, MSG_ANS:
+        cursor_up = '\033[A'
+        cursor_up_ask = f'{cursor_up}                       '
 
-    ask(True, MSG_TRY)
+        while True:
+            ans = input(MSG_ASK)
 
-    ask(True, MSG_ANS)
+            if ans and ans in pop:
+                break
+
+            ans_sz = len(ans) * ' '
+
+            line = f'{cursor_up_ask}{ans_sz}{cursor_up}'
+            print(line)
+            print()
+            print()
+            print(line, end='\r')
+
+        if ans == r_ans:
+            print(MSG_COR)
+
+            return
+
+        if s == MSG_INC:
+            if int(ans) > asint:
+                hint = '>'
+            else:
+                hint = '<'
+
+            print(s.replace(chint, hint))
+        else:
+            print(s)
+
+        pop = pop.replace(ans, '')
 
     deinit()
+
+
+if __name__ == '__main__':
+    main()

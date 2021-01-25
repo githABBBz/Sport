@@ -20,46 +20,37 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-__all__ = []
-
 import getpass
 
 from colorama import deinit, init
 
 END = '\033[0m'
-G = '\033[32m'
-R = '\033[31m'
+GRE = '\033[32m'
+RED = '\033[31m'
 
-MSG_ASK1L = 'Player 1 - letter in word: '
-MSG_ASK1W = 'Player 1 - word: '
-MSG_ASK2 = 'Player 2 - missing letter: '
+MSG_ASK1L = 'Player 1 - Letter in word: '
+MSG_ASK1W = 'Player 1 - Word: '
+MSG_ASK2 = 'Player 2 - Missing letter: '
 
+TRY = 2
 
-def ask(answer):
-    if answer == ask1l:
-        print(G + ask1w + END)
+ask1w = getpass.getpass(MSG_ASK1W)
+ask1l = getpass.getpass(MSG_ASK1L)
 
-        exit()
+missing = '?'
+missing = ask1w.replace(ask1l, missing)
 
+print(missing)
 
-if __name__ == '__main__':
-    ask1w = getpass.getpass(MSG_ASK1W)
-    ask1l = getpass.getpass(MSG_ASK1L)
+init()
 
-    missing = ask1w.replace(ask1l, ' ')
-
-    print(missing)
-
-    init()
-
+for _ in range(TRY):
     ask2 = input(MSG_ASK2)
 
-    ask(ask2)
+    if ask2 == ask1l:
+        print(f'{GRE}{ask1w}{END}')
+        break
+else:
+    print(f'{RED}{ask1l}{END}')
 
-    ask2 = input(MSG_ASK2)
-
-    ask(ask2)
-
-    print(R + ask1l + END)
-
-    deinit()
+deinit()

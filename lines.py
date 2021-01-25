@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""Repeat the sequence game"""
+"""Repeat sequence"""
 
 __all__ = []
 
@@ -29,42 +29,43 @@ import time
 
 from colorama import deinit, init
 
-INTERVAL = 1
+MSG_ASK = 'What was the sequence? '
+MSG_COR = '\033[32mCorrect!\033[0m'
+MSG_INC = '\033[31mIncorrect\033[0m'
 
-K = 4
 
-POP = r'|\-/'
+def main():
+    br = 1
 
-if __name__ == '__main__':
+    k = 4
+
+    pop = r'|\-/'
+
     init()
 
     while True:
-        sequence = random.choices(POP, k=K)
-        sequence = ''.join(sequence)
+        s = random.choices(pop, k=k)
+        s = ''.join(s)
 
-        # Question
-        print('', sequence[0], end='\r')
-        time.sleep(INTERVAL)
+        ws = ''
 
-        print(' ', sequence[1], end='\r')
-        time.sleep(INTERVAL)
+        for i in range(k):
+            if i:
+                ws = i * ' '
 
-        print('  ', sequence[2], end='\r')
-        time.sleep(INTERVAL)
+            print(ws, s[i], end='\r')
+            time.sleep(br)
 
-        print('   ', sequence[3], end='\r')
-        time.sleep(INTERVAL)
+        print(f'{ws}  ')
 
-        print('     ')
-
-        # Answer
-        repeat = input('What was the sequence? ')
-
-        if repeat == sequence:
-            print('\033[32mCorrect!\033[0m')
+        if input(MSG_ASK) == s:
+            print(MSG_COR)
         else:
-            print('\033[31mIncorrect\033[0m')
-
+            print(MSG_INC)
             break
 
     deinit()
+
+
+if __name__ == '__main__':
+    main()

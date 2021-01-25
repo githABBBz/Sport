@@ -21,29 +21,30 @@
 # SOFTWARE.
 
 """
-All you do is press enter
+[ENTER]
 
-Let run as you prepare and time an event
+Prepare and time an event
 """
-
-__all__ = []
 
 import getpass
 
 from colorama import deinit, init
 
-if __name__ == '__main__':
-    end = '\033[0m'
+MSG_3 = '\033[31m3\033[0m'
+MSG_2 = '2'
+MSG_1 = '\033[32m1\033[0m'
 
-    init()
+prompt = ''
 
-    print('\033[31m3' + end)
-    getpass.getpass('')
+init()
 
-    print('2')
-    getpass.getpass('')
+print(MSG_3)
+getpass.getpass(prompt)
 
-    print('\033[32m1' + end)
-    getpass.getpass('')
+print(MSG_2)
+getpass.getpass(prompt)
 
-    deinit()
+print(MSG_1)
+getpass.getpass(prompt)
+
+deinit()

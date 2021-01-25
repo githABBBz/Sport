@@ -20,23 +20,21 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""Five"""
-
-__all__ = []
-
 from colorama import deinit, init
 
-if __name__ == '__main__':
-    add = range(1, 6)
-    sub = range(10, 5, -1)
+MSG_JOK = ('\033[31mJOKE'
+           '\033[0m'
+           '\033[32m!'
+           '\033[0m')
 
-    for i, j in zip(add, sub):
-        print(i, j)
+up = range(1, 6)
+down = range(10, 5, -1)
 
-    end = '\033[0m'
+for i, j in zip(up, down):
+    print(i, j)
 
-    init()
+init()
 
-    print(f'\033[31mJOKE{end}\033[32m!{end}')
+print(MSG_JOK)
 
-    deinit()
+deinit()
