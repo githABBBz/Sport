@@ -22,11 +22,15 @@
 
 import codecs
 
+from colorama import deinit, init
 from pyperclip import copy
 
 MSG_ASK = 'Text: '
-MSG_DONE = 'ENCODED COPIED'
+MSG_DONE = ('\033[32mENCODED COPIED'
+            '\033[0m')
 
 copy(codecs.encode(input(MSG_ASK), 'rot-13'))
 
+init()
 print(MSG_DONE)
+deinit()

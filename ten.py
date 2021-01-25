@@ -34,7 +34,5 @@ for i, j in zip(up, down):
     print(i, j)
 
 init()
-
 print(MSG_JOKE)
-
 deinit()
