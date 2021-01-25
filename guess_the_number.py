@@ -36,6 +36,9 @@ chint = '*'
 
 r_ans = random.choice(string.digits)
 
+A = '\033[A'
+A_ASK = f'{A}                       '
+
 MSG_ANS = f'The answer was {r_ans}'
 MSG_ASK = 'Guess the number (0-9) '
 MSG_COR = ('\033[32m'
@@ -53,10 +56,7 @@ def main():
 
     init()
 
-    for s in MSG_INC, MSG_INC, MSG_ANS:
-        cursor_up = '\033[A'
-        cursor_up_ask = f'{cursor_up}                       '
-
+    for msg in MSG_INC, MSG_INC, MSG_ANS:
         while True:
             ans = input(MSG_ASK)
 
@@ -65,7 +65,7 @@ def main():
 
             ans_sz = len(ans) * ' '
 
-            line = f'{cursor_up_ask}{ans_sz}{cursor_up}'
+            line = f'{A_ASK}{ans_sz}{A}'
             print(line)
             print()
             print()
@@ -76,15 +76,14 @@ def main():
 
             return
 
-        if s == MSG_INC:
+        if msg == MSG_INC:
             if int(ans) > asint:
-                hint = '>'
+                op = '>'
             else:
-                hint = '<'
-
-            print(s.replace(chint, hint))
+                op = '<'
+            print(msg.replace(chint, op))
         else:
-            print(s)
+            print(msg)
 
         pop = pop.replace(ans, '')
 
