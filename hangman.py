@@ -25,7 +25,7 @@ import getpass
 from colorama import deinit, init
 
 END = '\033[0m'
-GRE = '\033[32m'
+GREEN = '\033[32m'
 RED = '\033[31m'
 
 MSG_ASK1L = 'Player 1 - Letter in word: '
@@ -48,7 +48,7 @@ for _ in range(TRY):
     ask2 = input(MSG_ASK2)
 
     if ask2 == ask1l:
-        print(f'{GRE}{ask1w}{END}')
+        print(f'{GREEN}{ask1w}{END}')
         break
 else:
     print(f'{RED}{ask1l}{END}')

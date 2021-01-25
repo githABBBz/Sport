@@ -22,10 +22,10 @@
 
 from colorama import deinit, init
 
-MSG_JOK = ('\033[31mJOKE'
-           '\033[0m'
-           '\033[32m!'
-           '\033[0m')
+MSG_JOKE = ('\033[31mJOKE'
+            '\033[0m'
+            '\033[32m!'
+            '\033[0m')
 
 up = range(1, 6)
 down = range(10, 5, -1)
@@ -35,6 +35,6 @@ for i, j in zip(up, down):
 
 init()
 
-print(MSG_JOK)
+print(MSG_JOKE)
 
 deinit()

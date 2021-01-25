@@ -37,16 +37,16 @@ chosen = random.choice(string.digits)
 ASK = '                       '
 CURSOR_UP = '\033[A'
 
-INC = '*'
+HINT = '*'
 
-MSG_ANS = f'The answer was {chosen}'
+MSG_ANSWER = f'The answer was {chosen}'
 MSG_ASK = 'Guess the number (0-9) '
-MSG_COR = ('\033[32m'
-           'Correct!'
-           '\033[0m')
-MSG_INC = (f'\033[31m'
-           f'Try again {INC}'
-           '\033[0m')
+MSG_CORRECT = ('\033[32m'
+               'Correct!'
+               '\033[0m')
+MSG_INCORRECT = ('\033[31m'
+                 f'Try again {HINT}'
+                 '\033[0m')
 
 
 def main():
@@ -56,7 +56,7 @@ def main():
 
     init()
 
-    for msg in MSG_INC, MSG_INC, MSG_ANS:
+    for msg in MSG_INCORRECT, MSG_INCORRECT, MSG_ANSWER:
         while True:
             digit = input(MSG_ASK)
 
@@ -70,15 +70,15 @@ def main():
             print(ask, end='\r')
 
         if digit == chosen:
-            print(MSG_COR)
+            print(MSG_CORRECT)
             return
 
-        if msg == MSG_INC:
+        if msg == MSG_INCORRECT:
             if int(digit) > chosen_as_int:
                 hint = '>'
             else:
                 hint = '<'
-            print(msg.replace(INC, hint))
+            print(msg.replace(HINT, hint))
         else:
             print(msg)
 

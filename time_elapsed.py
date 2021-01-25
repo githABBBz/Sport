@@ -25,15 +25,15 @@ import getpass
 
 from colorama import deinit, init
 
-MSG_NTR = ('stop ['
-           '\033[31mENTER'
-           '\033[0m] ')
+MSG_STOP = ('stop ['
+            '\033[31mENTER'
+            '\033[0m] ')
 
 prompt = ''
 
 init()
 
-print(MSG_NTR)
+print(MSG_STOP)
 
 a = datetime.datetime.now()
 

@@ -30,38 +30,38 @@ import time
 from colorama import deinit, init
 
 MSG_ASK = 'What was the sequence? '
-MSG_COR = '\033[32mCorrect!\033[0m'
-MSG_INC = '\033[31mIncorrect\033[0m'
+MSG_CORRECT = '\033[32mCorrect!\033[0m'
+MSG_INCORRECT = '\033[31mIncorrect\033[0m'
 
 
 def main():
-    br = 1
-
     k = 4
 
-    pop = r'|\-/'
+    lines = r'|\-/'
+
+    seconds = 1
 
     init()
 
     while True:
-        s = random.choices(pop, k=k)
-        s = ''.join(s)
+        s = ''
 
-        ws = ''
+        sequence = random.choices(lines, k=k)
+        sequence = ''.join(sequence)
 
         for i in range(k):
             if i:
-                ws = i * ' '
+                s = i * ' '
 
-            print(ws, s[i], end='\r')
-            time.sleep(br)
+            print(s, sequence[i], end='\r')
+            time.sleep(seconds)
 
-        print(f'{ws}  ')
+        print(f'{s}  ')
 
-        if input(MSG_ASK) == s:
-            print(MSG_COR)
+        if input(MSG_ASK) == sequence:
+            print(MSG_CORRECT)
         else:
-            print(MSG_INC)
+            print(MSG_INCORRECT)
             break
 
     deinit()
