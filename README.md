@@ -1,5 +1,5 @@
 # Text games +
 
-# Setup
+# Requirements
 
-`pip install colorama`
+`colorama` `pyperclip`
