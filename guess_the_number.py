@@ -32,60 +32,59 @@ import string
 
 from colorama import deinit, init
 
-chint = '*'
+hint = '*'
 
-r_ans = random.choice(string.digits)
+r_a = random.choice(string.digits)
 
 A = '\033[A'
 A_ASK = f'{A}                       '
 
-MSG_ANS = f'The answer was {r_ans}'
+MSG_ANS = f'The answer was {r_a}'
 MSG_ASK = 'Guess the number (0-9) '
 MSG_COR = ('\033[32m'
            'Correct!'
            '\033[0m')
 MSG_INC = (f'\033[31m'
-           f'Try again {chint}'
+           f'Try again {hint}'
            '\033[0m')
 
 
 def main():
-    asint = int(r_ans)
+    i = int(r_a)
 
     pop = string.digits
 
     init()
 
-    for msg in MSG_INC, MSG_INC, MSG_ANS:
+    for m in MSG_INC, MSG_INC, MSG_ANS:
         while True:
-            ans = input(MSG_ASK)
+            a = input(MSG_ASK)
 
-            if ans and ans in pop:
+            if a and a in pop:
                 break
 
-            ans_sz = len(ans) * ' '
+            a_sz = len(a) * ' '
 
-            line = f'{A_ASK}{ans_sz}{A}'
-            print(line)
+            s = f'{A_ASK}{a_sz}{A}'
+            print(s)
             print()
             print()
-            print(line, end='\r')
+            print(s, end='\r')
 
-        if ans == r_ans:
+        if a == r_a:
             print(MSG_COR)
-
             return
 
-        if msg == MSG_INC:
-            if int(ans) > asint:
-                op = '>'
+        if m == MSG_INC:
+            if int(a) > i:
+                h = '>'
             else:
-                op = '<'
-            print(msg.replace(chint, op))
+                h = '<'
+            print(m.replace(hint, h))
         else:
-            print(msg)
+            print(m)
 
-        pop = pop.replace(ans, '')
+        pop = pop.replace(a, '')
 
     deinit()
 
