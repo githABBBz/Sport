@@ -29,7 +29,9 @@ MSG_ASK = 'Text: '
 MSG_DONE = ('\033[32mENCODED COPIED'
             '\033[0m')
 
-copy(codecs.encode(input(MSG_ASK), 'rot-13'))
+clear = input(MSG_ASK)
+unclear = codecs.encode(clear, 'rot-13')
+copy(unclear)
 
 init()
 print(MSG_DONE)
