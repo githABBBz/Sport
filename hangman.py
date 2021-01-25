@@ -27,8 +27,8 @@ import getpass
 from colorama import deinit, init
 
 END = '\033[0m'
-G = '\033[92m'
-R = '\033[91m'
+G = '\033[32m'
+R = '\033[31m'
 
 MSG_ASK1L = 'Player 1 - letter in word: '
 MSG_ASK1W = 'Player 1 - word: '

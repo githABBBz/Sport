@@ -28,7 +28,7 @@ import getpass
 from colorama import deinit, init
 
 if __name__ == '__main__':
-    msg = 'stop [\033[91mENTER\033[0m] '
+    msg = 'stop [\033[31mENTER\033[0m] '
 
     start = datetime.datetime.now()
 

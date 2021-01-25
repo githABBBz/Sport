@@ -61,9 +61,9 @@ if __name__ == '__main__':
         repeat = input('What was the sequence? ')
 
         if repeat == sequence:
-            print('\033[92mCorrect!\033[0m')
+            print('\033[32mCorrect!\033[0m')
         else:
-            print('\033[91mIncorrect\033[0m')
+            print('\033[31mIncorrect\033[0m')
 
             break
 

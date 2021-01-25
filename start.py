@@ -37,13 +37,13 @@ if __name__ == '__main__':
 
     init()
 
-    print('\033[91m3' + end)
+    print('\033[31m3' + end)
     getpass.getpass('')
 
     print('2')
     getpass.getpass('')
 
-    print('\033[92m1' + end)
+    print('\033[32m1' + end)
     getpass.getpass('')
 
     deinit()

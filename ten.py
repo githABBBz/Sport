@@ -35,6 +35,6 @@ if __name__ == '__main__':
 
     init()
 
-    print(f'\033[91mJOKE{end}\033[92m!{end}')
+    print(f'\033[31mJOKE{end}\033[32m!{end}')
 
     deinit()

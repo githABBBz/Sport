@@ -35,8 +35,8 @@ as_int = int(right_answer)
 
 MSG_ANS = 'The answer was ' + right_answer
 MSG_ASK = 'Guess the number (0-9) '
-MSG_OK = '\033[92mCorrect!\033[0m'
-MSG_TRY = '\033[91mTry again *\033[0m'
+MSG_OK = '\033[32mCorrect!\033[0m'
+MSG_TRY = '\033[31mTry again *\033[0m'
 
 
 def ask(addline, msg_wrong):
