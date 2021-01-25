@@ -1,1 +1,5 @@
-# Text games+
+# Text games +
+
+# Setup
+
+`pip install colorama`
