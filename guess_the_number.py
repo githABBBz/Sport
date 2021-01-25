@@ -32,59 +32,57 @@ import string
 
 from colorama import deinit, init
 
-hint = '*'
+chosen = random.choice(string.digits)
 
-r_a = random.choice(string.digits)
+ASK = '                       '
+CURSOR_UP = '\033[A'
 
-A = '\033[A'
-A_ASK = f'{A}                       '
+INC = '*'
 
-MSG_ANS = f'The answer was {r_a}'
+MSG_ANS = f'The answer was {chosen}'
 MSG_ASK = 'Guess the number (0-9) '
 MSG_COR = ('\033[32m'
            'Correct!'
            '\033[0m')
 MSG_INC = (f'\033[31m'
-           f'Try again {hint}'
+           f'Try again {INC}'
            '\033[0m')
 
 
 def main():
-    i = int(r_a)
+    chosen_as_int = int(chosen)
 
-    pop = string.digits
+    digits = string.digits
 
     init()
 
-    for m in MSG_INC, MSG_INC, MSG_ANS:
+    for msg in MSG_INC, MSG_INC, MSG_ANS:
         while True:
-            a = input(MSG_ASK)
+            digit = input(MSG_ASK)
 
-            if a and a in pop:
+            if digit and digit in digits:
                 break
 
-            a_sz = len(a) * ' '
-
-            s = f'{A_ASK}{a_sz}{A}'
-            print(s)
+            ask = f'{CURSOR_UP}{ASK}{len(digit) * " "}{CURSOR_UP}'
+            print(ask)
             print()
             print()
-            print(s, end='\r')
+            print(ask, end='\r')
 
-        if a == r_a:
+        if digit == chosen:
             print(MSG_COR)
             return
 
-        if m == MSG_INC:
-            if int(a) > i:
-                h = '>'
+        if msg == MSG_INC:
+            if int(digit) > chosen_as_int:
+                hint = '>'
             else:
-                h = '<'
-            print(m.replace(hint, h))
+                hint = '<'
+            print(msg.replace(INC, hint))
         else:
-            print(m)
+            print(msg)
 
-        pop = pop.replace(a, '')
+        digits = digits.replace(digit, '')
 
     deinit()
 
