@@ -22,11 +22,8 @@
 
 from colorama import deinit, init
 
-MSG_ASCII_ART = ('\t>o'
-                 '\033[32m)'
-                 '\033[0m\n\t'
-                 '\033[31m('
-                 '\033[0m_>')
+MSG_ASCII_ART = '''\033[32m(\033[0mo<
+<_\033[31m)\033[0m'''
 
 init()
 print(MSG_ASCII_ART)
