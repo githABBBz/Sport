@@ -10,7 +10,7 @@ Quack
 
 Attempt to guess what number was chosen at random
 
-Encode copy text
+Encode and copy text
 
 5
 
