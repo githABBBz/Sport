@@ -14,7 +14,7 @@ Encode copy text
 
 5
 
-Repeat sequence
+Repeat the sequence
 
 Time elapsed
 
