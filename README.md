@@ -8,7 +8,7 @@ Hit the next letter
 
 Quack
 
-Attempt to guess what number was chosen at random
+Guess what number was chosen at random
 
 Encode and copy text
 
