@@ -16,7 +16,7 @@ Encode copy text
 
 Repeat sequence
 
-[ENTER] Time elapsed
+Time elapsed
 
 Fill in the missing letter
 
