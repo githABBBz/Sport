@@ -40,13 +40,13 @@ def hit(put):
     put(s)
 
 
-init()
-
 q = queue.Queue()
 
 t = threading.Thread(args=(q.put,), daemon=True, target=hit)
 
 t.start()
+
+init()
 
 for char in string.ascii_lowercase:
     if not q.empty():
@@ -61,8 +61,8 @@ for char in string.ascii_lowercase:
 
     time.sleep(BREAK)
 
+deinit()
+
 timeout = 0.1
 
 t.join(timeout)
-
-deinit()

@@ -50,7 +50,11 @@ def main():
         sequence = ''.join(sequence)
 
         for i in range(k):
-            if i:
+            if not i:
+                s = ''
+            elif i == 1:
+                s = ' '
+            else:
                 s = i * ' '
 
             print(s, sequence[i], end='\r')

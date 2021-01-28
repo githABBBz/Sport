@@ -63,7 +63,16 @@ def main():
             if digit and digit in digits:
                 break
 
-            ask = f'{CURSOR_UP}{ASK}{len(digit) * " "}{CURSOR_UP}'
+            length = len(digit)
+
+            if not length:
+                s = ''
+            elif length == 1:
+                s = ' '
+            else:
+                s = length * ' '
+
+            ask = f'{CURSOR_UP}{ASK}{s}{CURSOR_UP}'
             print(ask)
             print()
             print()
@@ -71,7 +80,7 @@ def main():
 
         if digit == chosen:
             print(MSG_CORRECT)
-            return
+            break
 
         if msg == MSG_INCORRECT:
             if int(digit) > chosen_as_int:
