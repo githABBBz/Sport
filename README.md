@@ -4,19 +4,19 @@
 
 [ENTER] Prepare and time an event
 
-Quack
-
 Guess what number was chosen at random
+
+Hit the next letter
 
 Encode and copy text
 
-5
+Quack
 
 Repeat the sequence
 
 Time elapsed
 
-Hit the next letter
+5
 
 Fill in the missing letter
 
