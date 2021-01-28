@@ -2,8 +2,6 @@
 
 ## In alphabetical order
 
-Hit the next letter
-
 [ENTER] Prepare and time an event
 
 Quack
@@ -17,6 +15,8 @@ Encode and copy text
 Repeat the sequence
 
 Time elapsed
+
+Hit the next letter
 
 Fill in the missing letter
 
