@@ -22,7 +22,7 @@
 
 from colorama import deinit, init
 
-MSG_BILLION_LAUGHS = '''ha0 = \'ha\'
+MSG_BILLION_LAUGHS = '''ha0 = 'ha'
 ha1 = ha0, ha0, ha0, ha0, ha0, ha0, ha0, ha0, ha0, ha0
 ha2 = ha1, ha1, ha1, ha1, ha1, ha1, ha1, ha1, ha1, ha1
 ha3 = ha2, ha2, ha2, ha2, ha2, ha2, ha2, ha2, ha2, ha2
