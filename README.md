@@ -2,15 +2,9 @@
 
 ## In alphabetical order
 
-A billion laughs attack
-
 [ENTER] Prepare and time an event
 
 Guess what number was chosen at random
-
-Hit the next letter
-
-Encode and copy text
 
 Quack
 
