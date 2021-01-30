@@ -23,15 +23,9 @@
 import datetime
 import getpass
 
-from colorama import deinit, init
-
-MSG_STOP = ('stop ['
-            '\033[31mENTER'
-            '\033[0m] ')
+MSG_STOP = 'stop [ENTER] '
 
 prompt = ''
-
-init()
 
 print(MSG_STOP)
 
@@ -40,7 +34,5 @@ a = datetime.datetime.now()
 getpass.getpass(prompt)
 
 b = datetime.datetime.now()
-
-deinit()
 
 print(b - a)
