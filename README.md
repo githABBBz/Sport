@@ -18,4 +18,4 @@ Fill in the missing letter
 
 # Requirements
 
-`colorama` `pyperclip`
+`colorama`
