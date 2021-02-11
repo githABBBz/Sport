@@ -20,6 +20,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+"""Was it thief or police you were thinking"""
+
 import random
 
 pop = [' Thief', 'Police']

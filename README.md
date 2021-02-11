@@ -8,7 +8,7 @@ Repeat the sequence
 
 Time elapsed
 
-I guess
+Was it thief or police you were thinking
 
 Fill in the missing letter
 
