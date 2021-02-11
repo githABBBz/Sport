@@ -22,4 +22,14 @@
 
 import random
 
-print({'y': 'I win', 'n': 'I lose'}.get(input(random.choice(['Ladrão ', 'Policia']) + ' [y/n] ')))
+pop = [' Thief', 'Police']
+chosen = random.choice(pop)
+
+MSG_ANSWER = f'{chosen} [y/] '
+MSG_N = 'I lose'
+MSG_Y = 'I  win'
+
+if input(MSG_ANSWER) != 'y':
+    print(MSG_N)
+else:
+    print(MSG_Y)
