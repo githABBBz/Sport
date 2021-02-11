@@ -22,19 +22,4 @@
 
 import random
 
-from colorama import deinit, init
-
-ask = random.choice(['Ladrão ', 'Policia'])
-
-init()
-
-while True:
-    ans = {'y': 'I win', 'n': 'I lose'}.get(input(f'{ask} [y/n] '))
-
-    if ans is not None:
-        print(ans)
-        break
-    else:
-        print('\033[A               \033[A')
-
-deinit()
+print({'y': 'I win', 'n': 'I lose'}.get(input(random.choice(['Ladrão ', 'Policia']) + ' [y/n] ')))

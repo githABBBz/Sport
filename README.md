@@ -4,6 +4,8 @@
 
 Guess what number was chosen at random
 
+Police or thief
+
 Repeat the sequence
 
 Time elapsed
