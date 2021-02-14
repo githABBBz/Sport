@@ -20,8 +20,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-__all__ = []
-
 import random
 import time
 
@@ -31,43 +29,35 @@ MSG_ASK = 'What was the sequence? '
 MSG_CORRECT = '\033[32mCorrect!\033[0m'
 MSG_INCORRECT = '\033[31mIncorrect\033[0m'
 
+k = 4
+lines = r'|\-/'
+seconds = 1
 
-def main():
-    k = 4
+init()
 
-    lines = r'|\-/'
+while True:
+    s = ''
 
-    seconds = 1
+    sequence = ''.join(random.choices(lines, k=k))
 
-    init()
-
-    while True:
-        s = ''
-
-        sequence = random.choices(lines, k=k)
-        sequence = ''.join(sequence)
-
-        for i in range(k):
-            if not i:
-                s = ''
-            elif i == 1:
-                s = ' '
-            else:
-                s = i * ' '
-
-            print(s, sequence[i], end='\r')
-            time.sleep(seconds)
-
-        print(f'{s}  ')
-
-        if input(MSG_ASK) == sequence:
-            print(MSG_CORRECT)
+    for i in range(k):
+        if not i:
+            s = ''
+        elif i == 1:
+            s = ' '
         else:
-            print(MSG_INCORRECT)
-            break
+            s = i * ' '
 
-    deinit()
+        print(s, sequence[i], end='\r')
 
+        time.sleep(seconds)
 
-if __name__ == '__main__':
-    main()
+    print(f'{s}  ')
+
+    if input(MSG_ASK) == sequence:
+        print(MSG_CORRECT)
+    else:
+        print(MSG_INCORRECT)
+        break
+
+deinit()
