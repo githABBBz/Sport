@@ -6,8 +6,6 @@ Guess what number was chosen at random
 
 Repeat the sequence
 
-Time elapsed
-
 Was it thief or police you were thinking
 
 Animation
