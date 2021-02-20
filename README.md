@@ -6,9 +6,9 @@ Guess what number was chosen at random
 
 Repeat the sequence
 
-Was it thief or police you were thinking
-
 Animation
+
+Was it thief or police you were thinking
 
 Fill in the missing letter
 
