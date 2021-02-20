@@ -6,7 +6,7 @@ Guess what number was chosen at random
 
 Repeat the sequence
 
-Animation
+Waves, a console animation
 
 Was it thief or police you were thinking
 
